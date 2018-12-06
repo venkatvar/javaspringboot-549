@@ -3,6 +3,8 @@ kind: Deployment
 metadata:
   name: {{ template "fullname" . }}
   labels:
+    snappyflow/compname: javaspringboot
+    snappyflow/appname: produc-stage
     draft: {{ default "draft-app" .Values.draft }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
 spec:
@@ -10,6 +12,8 @@ spec:
   template:
     metadata:
       labels:
+        snappyflow/compname: javaspringboot
+        snappyflow/appname: produc-stage
         draft: {{ default "draft-app" .Values.draft }}
         app: {{ template "fullname" . }}
 {{- if .Values.podAnnotations }}

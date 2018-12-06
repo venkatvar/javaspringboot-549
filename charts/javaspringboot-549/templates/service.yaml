@@ -7,6 +7,8 @@ metadata:
   name: {{ template "fullname" . }}
 {{- end }}
   labels:
+    snappyflow/compname: javaspringboot
+    snappyflow/appname: produc-stage
     chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
 {{- if .Values.service.annotations }}
   annotations:
